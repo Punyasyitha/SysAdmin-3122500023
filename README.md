@@ -6,7 +6,7 @@
 | TUGAS 1 |  _[KLICK HERE](https://github.com/adindazaahraa/administrasijaringan/tree/main/Tugas-Pertama)_ |
 | TUGAS 2 |  _[KLICK HERE](https://github.com/adindazaahraa/administrasijaringan/tree/main/Tugas-Kedua)_ |
 | TUGAS 3 |  _[KLICK HERE](https://github.com/Punyasyitha/SysAdmin_3122500023/tree/main/Tugas-Ketiga)_ |
-| TUGAS 3 |  _[KLICK HERE](https://github.com/Punyasyitha/SysAdmin_3122500023/tree/main/Tugas-Keempat)_ |
+| TUGAS 4 |  _[KLICK HERE](https://github.com/Punyasyitha/SysAdmin_3122500023/tree/main/Tugas-Keempat)_ |
 
 ### ANGGOTA KELOMPOK
 | NAMA                          | NRP       |
