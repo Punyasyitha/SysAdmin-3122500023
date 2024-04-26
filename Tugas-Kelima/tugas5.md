@@ -25,6 +25,7 @@ Daftar Isi
 - [5. Install IMAP POP3 Dovecot](#5-install-dovecot-imap-pop3)
 - [6. Debian Evolution](#6-debian-evolution)
 - [7. RoundCube Email Client](#7-roundcube-email-client)
+- [8.  PERCOBAAN MAILSERVER JARINGAN JARKOM C307](#8-percobaan-mailserver-jaringan-jarkom-c307)
 
 ## 1. Setup NTP (Netwotk Time Protocol)
 - Gunakan command ``sudo apt install systemd-timesyncd``
@@ -259,3 +260,50 @@ Akan terlihat hasilnya seperti di bawah, dengan status Server (LISTEN) : MariaDB
 - Lakukan pengecekan pesan masuk pada user kedua 
 ![alt text](images/87.png)
 - Pesan berhasil masuk dan diterima oleh user kedua. Roundcube berhasil berjalan dengan baik.
+
+## 8.  PERCOBAAN MAILSERVER JARINGAN JARKOM C307
+1. Pastikan sudah terkoneksi dengan ethernet LAB JARKOM
+2. Lakukan Ping ke 1.1.1.1 pastikan sudah terhubung ke dns 1.1.1.1
+3. Setting Virtual Box Ke Dalam Network Bridge dengan cara pergi ke setting/machine >> Network
+   ![alt text](images/12.3.png)
+   
+4. Supaya DNS Kita dapat diresolve oleh kelompok lain lakukan Konfigurasi Berikut
+5. Setting interfaces:
+   ![alt text](images/12.5.png)
+
+6. Setting named.conf.options:
+   
+   sudo nano /etc/bind/named.conf.options
+   ![alt text](images/12.6.1.png)
+   ![alt text](images/12.6.2.png)
+   ![alt text](images/12.6.3.png)
+7. Setting resolv.conf:
+   
+   sudo nano /etc/resolv.conf
+   ![alt text](images/12.7.1.png)
+   ![alt text](images/12.7.2.png)
+8. Lakukan sudo restart systemctl networking Setelahnya
+   
+   sudo systemctl restart networking
+   
+9.  Lakukan Ping Detik.com atau IP Kelompok lain disini 192.168.10.10
+    
+    ping detik.com
+    nslookup ns.kelompok2.local
+    
+10. Buat DHCP Server Bridge Pada Aplikasi WINBOX. Connect Ke Server/Router Klik DHCP SETUP, Pilih Bridge Interface
+    ![alt text](images/12.10.jpg)
+
+11. Masukkan dns
+    ![alt text](images/12.11.jpg)
+
+12. Cek Mail Server
+    
+    nslookup mail.kelompok10.local
+    
+13. nslookup -q=MX kelompok2.local
+    <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
+14. Buka Mail Server Kelompok Kita
+    <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
+15. Lakukan Pengiriman Ke Kelompok Lainnya
+    ![alt text](images/12.15.jpg)
