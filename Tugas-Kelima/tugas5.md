@@ -27,6 +27,7 @@ Daftar Isi
 - [7. RoundCube Email Client](#7-roundcube-email-client)
 - [8.  PERCOBAAN MAILSERVER JARINGAN JARKOM C307](#8-percobaan-mailserver-jaringan-jarkom-c307)
 
+
 ## 1. Setup NTP (Netwotk Time Protocol)
 - Gunakan command ``sudo apt install systemd-timesyncd``
 - Berikutnya, ubah TimeZone ke Asia/Jakarta
@@ -307,3 +308,55 @@ Akan terlihat hasilnya seperti di bawah, dengan status Server (LISTEN) : MariaDB
     <!-- <img src="../Tugas-UTS/img" width="90%" height="auto"><br> -->
 15. Lakukan Pengiriman Ke Kelompok Lainnya
     ![alt text](images/12.15.jpg)
+
+### 9. ANALISIS MIME(HEADER), POP3, DAN SMTP
+
+Berikut adalah analisis singkat untuk MIME (Multipurpose Internet Mail Extensions), POP3 (Post Office Protocol version 3), dan SMTP (Simple Mail Transfer Protocol):
+
+---
+
+1. *Multipurpose Internet Mail Extensions (MIME):*
+- Apa itu MIME: <br>
+  MIME adalah standar yang memungkinkan berbagai jenis informasi, seperti teks, gambar, audio, dan video, untuk disampaikan melalui protokol email. Ini memungkinkan email untuk mengirim dan menerima konten multimedia.
+- Header MIME: <br>
+  Header MIME terdiri dari beberapa bagian yang mengontrol bagaimana konten email diinterpretasikan oleh klien email. Beberapa header MIME umum meliputi:
+  - Content-Type: Menunjukkan tipe media konten (teks, gambar, dll.).
+  - Content-Disposition: Mengontrol cara konten tersebut ditampilkan atau diproses.
+  - Content-Transfer-Encoding: Mengonversi data biner ke format teks agar dapat ditransmisikan melalui protokol email.
+- Penggunaan MIME:
+  MIME digunakan untuk menyampaikan email yang mengandung lampiran, gambar, format teks kaya, dan konten multimedia lainnya. Ini memungkinkan pengguna untuk mengirim pesan email yang lebih kaya dan lebih bervariasi.
+
+---
+
+2. *Post Office Protocol version 3 (POP3):*
+- Apa itu POP3: <br>
+  POP3 adalah protokol yang digunakan untuk mengambil email dari server email ke klien email. Ini adalah salah satu protokol yang paling umum digunakan untuk mengakses email dari server.
+- Cara Kerja POP3:
+  1) Klien email terhubung ke server email melalui port 110.
+  2) Setelah koneksi dibuat, klien mengirimkan kredensial pengguna untuk otentikasi.
+  3) Server memvalidasi kredensial dan memberikan akses ke kotak surat pengguna.
+  4) Klien mengunduh email dari server, dan email dihapus dari server (secara default) atau ditandai untuk penghapusan kemudian.
+- Kelebihan dan Kekurangan POP3:
+  1) Kelebihan:
+  - Mudah diimplementasikan dan dipahami.
+  - Cocok untuk penggunaan di lingkungan dengan koneksi internet yang tidak stabil.
+  2) Kekurangan:
+   - Email hanya dapat diakses dari satu perangkat pada satu waktu.
+   - Standar POP3 tidak menyertakan fitur untuk menyinkronkan pesan di antara beberapa perangkat.
+---
+
+1. *Simple Mail Transfer Protocol (SMTP):*
+- Apa itu SMTP:
+- SMTP adalah protokol yang digunakan untuk mengirim email antara server email. Ini mengatur proses pengiriman email dari klien email pengirim ke server email penerima.
+- Cara Kerja SMTP:
+  1) Klien email mengirim pesan ke server email pengirim melalui port 25 (atau port 587 untuk pengiriman yang aman).
+  2) Server email pengirim mengautentikasi klien dan menerima pesan email.
+  3) Pesan email kemudian ditransfer ke server email penerima melalui jaringan internet menggunakan protokol SMTP.
+  4) Server email penerima menyimpan pesan di kotak surat penerima atau meneruskannya ke klien email penerima.
+- Kelebihan dan Kekurangan SMTP:<br>
+  1) Kelebihan:
+  - Cepat dan andal dalam pengiriman email.
+  - Mendukung pengiriman email massal. 
+  1) Kekurangan:
+  - Rentan terhadap spam dan serangan phishing.
+  - Tidak menyediakan enkripsi bawaan, sehingga pesan email dapat rentan terhadap penyadapan. 
