@@ -3,7 +3,7 @@
   <h4 style="text-align: center;">Dosen Pengampu : Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 </div>
 
-<p align="center"><img src="../Tugas-Pertama/img/logo.png" alt="logo"></p>
+<p align="center"><img src="images/logo.png" alt="logo"></p>
 
 <div align="center">
   <h3>Disusun Oleh:</h3>
@@ -26,7 +26,7 @@
 ## A. Getting Started
 1. **Login ke https://labs.play-with-docker.com/ untuk mengakses terminal PWD Anda**
    
-   <img src="../Tugas-Ketujuh/img/0.1.png" width="100%" height="auto">
+   <img src="images/plays-docker.png" width="100%" height="auto">
   
 3. **Ketik perintah berikut di terminal PWD Anda:** 
    ```
@@ -37,10 +37,8 @@
    `-p 80:80` - memetakan port 80 dari host ke port 80 di dalam container<br>
    `dockersamples/101-tutorial` - gambar yang digunakan
    
-   <img src="../Tugas-Ketujuh/img/0.2.png" width="100%" height="auto"><br>
+   <img src="images/Screenshot (294).png" width="100%" height="auto"><br>
 4. **Tunggu hingga container dimulai dan klik badge port 80**
-   
-   <img src="../Tugas-Ketujuh/img/0.3.png" width="100%" height="auto"><br>
 5. **Apa itu container?**<br>
    Singkatnya, container adalah proses lain di mesin Anda yang diisolasi dari semua proses lain di mesin host. Isolasi ini memanfaatkan kernel namespaces dan cgroups, fitur yang sudah lama ada di Linux. Docker membuat kemampuan ini lebih mudah diakses dan digunakan.
 6. **Apa itu container image?**<br>
@@ -53,21 +51,19 @@ Sebelum kita dapat menjalankan aplikasi, kita perlu memasukkan kode sumber aplik
 
 Unduh file zip dan unggah ke Play with Docker. Sebagai tip, Anda dapat ***drag and drop*** file zip (atau file lain) ke terminal di PWD.
 
-<p align="center"><img src="../Tugas-Ketujuh/img/1.1.png" width="50%" height="auto"></p>
-
 1. **Di terminal PWD, ekstrak file zip dengan perintah berikut:**
    ```
    unzip app.zip
    ```
-   <img src="../Tugas-Ketujuh/img/1.2.1.png" width="100%" height="auto"><br>
-   <img src="../Tugas-Ketujuh/img/1.2.2.png" width="100%" height="auto"><br>
+   <img src="images/Screenshot (295).png" width="100%" height="auto"><br>
+    <img src="images/Screenshot (296).png" width="100%" height="auto"><br>
 
 2. **Ubah direktori kerja Anda ke folder 'app' yang baru. Di direktori ini, Anda akan melihat aplikasi sederhana berbasis Node:**
    ```
    cd app/
    ls
    ```
-   <img src="../Tugas-Ketujuh/img/1.3.png" width="100%" height="auto"><br>
+   <img src="images/Screenshot (297).png" width="100%" height="auto"><br>
 
 ### Membangun Container Image Aplikasi
 Untuk membangun aplikasi, kita perlu menggunakan Dockerfile. Dockerfile adalah skrip berbasis teks yang digunakan untuk membuat container image. Jika Anda pernah membuat Dockerfile sebelumnya, Anda mungkin melihat beberapa kekurangan pada Dockerfile di bawah ini. Tapi, jangan khawatir! Kita akan membahasnya.
@@ -80,16 +76,13 @@ Untuk membangun aplikasi, kita perlu menggunakan Dockerfile. Dockerfile adalah s
    RUN yarn install --production
    CMD ["node", "/app/src/index.js"]
    ```
-   <img src="../Tugas-Ketujuh/img/1.4.png" width="100%" height="auto"><br>
-
 2. **Bangun container image menggunakan perintah docker build:**
    ```
    docker build -t docker-101 .
    ```
    Perintah ini menggunakan Dockerfile untuk membangun container image baru. Anda mungkin melihat banyak "layer" yang diunduh. Ini karena kami memberi instruksi kepada builder untuk memulai dari image node:10-alpine. Namun, karena kami tidak memiliki image tersebut di mesin kami, image itu perlu diunduh.
 
-   <img src="../Tugas-Ketujuh/img/1.5.1.png" width="100%" height="auto"><br>
-   <img src="../Tugas-Ketujuh/img/1.5.2.png" width="100%" height="auto"><br>
+      <img src="images/Screenshot (301).png" width="100%" height="auto"><br>
    
    Setelah itu, kami menyalin aplikasi kami dan menggunakan yarn untuk menginstal dependensi aplikasi kami. Perintah CMD menentukan perintah default yang dijalankan saat memulai container dari image ini.
 
@@ -102,15 +95,15 @@ Sekarang setelah kita memiliki image, mari kita jalankan aplikasinya! Untuk mela
    ```
    Ingat flag -d dan -p? Kami menjalankan container baru dalam mode "detached" (di latar belakang) dan membuat pemetaan antara port 3000 host dengan port 3000 di container.
 
-   <img src="../Tugas-Ketujuh/img/1.6.png" width="100%" height="auto"><br>
+      <img src="images/Screenshot (304).png" width="100%" height="auto"><br>
    
 2. **Buka aplikasi dengan mengklik badge "3000" di bagian atas antarmuka PWD. Setelah terbuka, Anda akan melihat daftar tugas kosong!**
-   
-   <img src="../Tugas-Ketujuh/img/1.7.png" width="100%" height="auto"><br>
+
+   <img src="images/Screenshot (303).png" width="100%" height="auto"><br>
    
 3. **Cobalah tambahkan satu atau dua item dan lihat apakah berfungsi sesuai harapan. Anda dapat menandai item sebagai selesai dan menghapus item.**
    
-   <img src="../Tugas-Ketujuh/img/1.8.png" width="100%" height="auto"><br>
+   <img src="images/Screenshot(338).png" width="100%" height="auto"><br>
 
 Pada titik ini, Anda seharusnya memiliki manajer daftar tugas yang berjalan dengan beberapa item, semuanya dibangun oleh Anda! Sekarang, mari kita lakukan beberapa perubahan dan belajar tentang mengelola container kita.
 
@@ -123,19 +116,18 @@ Selanjutnya, kita akan membuat modifikasi pada aplikasi kita dan belajar cara me
 ### Memperbarui Kode Sumber Kita
 1.       
    
-   <img src="../Tugas-Ketujuh/img/2.1.png" width="100%" height="auto"><br>
+      <img src="images/Screenshot (306).png.png" width="100%" height="auto"><br>
 
 2. **Mari kita bangun versi image yang diperbarui, menggunakan perintah yang sama seperti sebelumnya.**
    ```
    docker build -t docker-101 .
    ```
-   <img src="../Tugas-Ketujuh/img/2.2.png" width="100%" height="auto"><br>
+<img src="images/Screenshot (307).png" width="100%" height="auto"><br>
 
 3. **Mari kita mulai container baru menggunakan kode yang diperbarui.**
    ```
    docker run -dp 3000:3000 docker-101
    ```
-   <img src="../Tugas-Ketujuh/img/2.3.png" width="100%" height="auto"><br>
 
    Ups! Anda mungkin melihat kesalahan seperti ini (ID akan berbeda):
    Jadi, apa yang terjadi? Kita tidak bisa memulai container baru karena container lama kita masih berjalan. Masalah ini terjadi karena container tersebut menggunakan port 3000 dari host dan hanya satu proses (termasuk container) yang bisa mendengarkan port tertentu. Untuk memperbaikinya, kita perlu menghapus container lama.
@@ -144,27 +136,15 @@ Selanjutnya, kita akan membuat modifikasi pada aplikasi kita dan belajar cara me
 Untuk menghapus container, pertama-tama harus dihentikan. Kemudian, bisa dihapus.
 
 1. **Dapatkan `ID container` dengan menggunakan perintah `docker ps`.**
-   
-   <img src="../Tugas-Ketujuh/img/2.4.png" width="100%" height="auto">
 
 2. **Gunakan perintah `docker stop` untuk menghentikan container.**
    
-   <img src="../Tugas-Ketujuh/img/2.5.png" width="100%" height="auto">
-   
 3. **Setelah container berhenti, Anda bisa menghapusnya dengan menggunakan perintah `docker rm <container-id>`.**
-   
-   <img src="../Tugas-Ketujuh/img/2.6.png" width="100%" height="auto">
 
 4. **Sekarang, jalankan aplikasi yang telah diperbarui.**
    
-   <img src="../Tugas-Ketujuh/img/2.7.png" width="100%" height="auto"><br>
-   <img src="../Tugas-Ketujuh/img/2.8.png" width="70%" height="auto">
-
-```
-   Tips profesional
-   Anda bisa menghentikan dan menghapus container dalam satu perintah dengan menambahkan `flag` "force" ke perintah `docker rm`. Misalnya:
-   ```
-   <p align="center"><img src="../Tugas-Ketujuh/img/2.9.png" width="100%" height="auto"></p>
+   <img src="images/Screenshot (309).png" width="100%" height="auto"><br>
+   <img src="images/Screenshot (329).png" width="70%" height="auto">
 
 ### Analisis
 Meskipun kita berhasil membangun pembaruan, ada dua hal yang mungkin Anda perhatikan:
@@ -178,15 +158,15 @@ Untuk mendorong (push) sebuah image, kita pertama-tama perlu membuat repo di Doc
 
 1. **Buka Docker Hub dan login jika diperlukan. Klik tombol `Create a Repository`.**
    
-   <img src="../Tugas-Ketujuh/img/3.1.png" width="100%" height="auto">
+   <img src="images/Screenshoot-new-1.png" width="100%" height="auto">
 
 2. **Untuk nama repo, gunakan `101-todo-app`. Pastikan Visibilitasnya adalah Public. Klik tombol `Create`!**
    
-   <img src="../Tugas-Ketujuh/img/3.2.png" width="100%" height="auto">
+    <img src="images/Screenshoot-new-2.png" width="100%" height="auto"><br>
 
 3. **Jika Anda melihat di sisi kanan halaman, Anda akan menemukan bagian bernama Docker commands. Ini memberikan contoh perintah yang perlu Anda jalankan untuk mendorong image ke repo ini.**
    
-   <img src="../Tugas-Ketujuh/img/3.3.png" width="100%" height="auto"><br>
+   <img src="images/Screenshoot-new-3.png" width="100%" height="auto"><br>
 
 ### Mendorong (Push) Image Kita
 1. **Kembali ke instance PWD Anda, coba jalankan perintah berikut. Anda mungkin akan mendapatkan kesalahan yang terlihat seperti ini:**
@@ -195,36 +175,30 @@ Untuk mendorong (push) sebuah image, kita pertama-tama perlu membuat repo di Doc
    The push refers to repository [docker.io/dockersamples/101-todo-app]
    An image does not exist locally with the tag: dockersamples/101-todo-app
    ```
-   <img src="../Tugas-Ketujuh/img/3.4.png" width="100%" height="auto">
-
    Kenapa gagal? Perintah push mencari image bernama `dockersamples/101-todo-app`, tetapi tidak menemukannya. Jika Anda menjalankan `docker image ls`, Anda juga tidak akan melihat image tersebut.
 
    Untuk memperbaikinya, kita perlu `tag` image kita, yang pada dasarnya berarti memberikan nama lain.
 2. **Login ke Docker Hub menggunakan perintah `docker login -u YOUR-USER-NAME`.**
-   
-   <img src="../Tugas-Ketujuh/img/3.5.png" width="100%" height="auto">
 
 3. **Gunakan perintah `docker tag` untuk memberi image `docker-101` nama baru. Pastikan untuk mengganti `YOUR-USER-NAME` dengan Docker ID Anda.**
    ```
    docker tag docker-101 YOUR-USER-NAME/101-todo-app
    ```
-   <img src="../Tugas-Ketujuh/img/3.6.png" width="100%" height="auto">
+
 4. **Sekarang coba lagi perintah push Anda. Jika Anda menyalin nilai dari Docker Hub, Anda bisa mengabaikan bagian `tagname`, karena kita tidak menambahkan tag ke nama image.**
    ```
    docker push YOUR-USER-NAME/101-todo-app
    ```
-   <img src="../Tugas-Ketujuh/img/3.7.png" width="100%" height="auto">
+ <img src="images/Screenshot (320).png" width="100%" height="auto"><br>
 
 ### Menjalankan Image Kita di Instance Baru
 Sekarang image kita telah dibangun dan di-push ke registry, mari kita coba menjalankan aplikasi kita di instance baru yang belum pernah melihat container ini!
 
 1. **Kembali di PWD, klik `Add New Instance` untuk membuat instance baru. Di instance baru, jalankan aplikasi yang baru saja didorong.**
    
-   <img src="../Tugas-Ketujuh/img/3.8.png" width="100%" height="auto"><br>
+   <img src="images/Screenshot (319).png" width="100%" height="auto"><br>
    Akan terihat image ditarik (pull) ke bawah dan akhirnya mulai!
 2. **Klik pada badge 3000 ketika muncul dan Anda akan melihat aplikasi dengan modifikasi Anda! Hooray!**
-   
-   <img src="../Tugas-Ketujuh/img/3.9.png" width="100%" height="auto"><br>
 
 ### Analisis
 Dalam bagian ini, kita belajar cara membagikan image kita dengan mendorongnya ke registry. Kita kemudian pergi ke instance baru dan berhasil menjalankan image yang baru saja didorong. Ini cukup umum dalam pipeline CI, di mana pipeline akan membuat image dan mendorongnya ke registry, kemudian lingkungan produksi dapat menggunakan versi terbaru dari image tersebut.
@@ -242,7 +216,7 @@ Untuk melihat ini dalam aksi, kita akan memulai dua container dan membuat file d
    ```
    docker run -d ubuntu bash -c "shuf -i 1-10000 -n 1 -o /data.txt && tail -f /dev/null"
    ```
-   <img src="../Tugas-Ketujuh/img/4.1.png" width="100%" height="auto">
+   <img src="images/Screenshot (321).png" width="100%" height="auto">
 
    Jika Anda bertanya-tanya tentang perintahnya, kita memulai shell bash dan menjalankan dua perintah (itulah mengapa ada `&&`). Bagian pertama memilih nomor acak dan menulisnya ke `/data.txt`. Perintah kedua hanya mengawasi file untuk menjaga agar container tetap berjalan.
 
@@ -250,13 +224,11 @@ Untuk melihat ini dalam aksi, kita akan memulai dua container dan membuat file d
    ```
    docker exec <container-id> cat /data.txt
    ```
-   <img src="../Tugas-Ketujuh/img/4.2.png" width="100%" height="auto">
-
    Anda harus melihat nomor acak!
    
 3. **Sekarang, mari kita mulai container `Ubuntu` lain (dengan image yang sama) dan kita akan melihat bahwa kita tidak memiliki file yang sama.**
    
-   <img src="../Tugas-Ketujuh/img/4.3.png" width="100%" height="auto">
+   <img src="images/Screenshot (322).png" width="100%" height="auto">
 
    Dan lihat! Tidak ada file `data.txt` di sana! Itu karena file tersebut ditulis ke scratch space hanya untuk container pertama.
    
@@ -280,20 +252,19 @@ Seperti disebutkan, kita akan menggunakan volume bernama. Anggap volume bernama 
    ```
    docker volume create
    ```
-   <img src="../Tugas-Ketujuh/img/4.4.png" width="100%" height="auto">
 
 2. **Mulai container todo, tetapi tambahkan flag -v untuk menentukan mount volume. Kita akan menggunakan volume bernama dan memasangnya ke /etc/todos, yang akan menangkap semua file yang dibuat di jalur tersebut.**
    ```
    docker run -dp 3000:3000 -v todo-db:/etc/todos docker-101
    ```
-   <img src="../Tugas-Ketujuh/img/4.5.png" width="100%" height="auto">
+
 3. **Setelah container dimulai, buka aplikasi dan tambahkan beberapa item ke daftar To-do Anda.**
-   
-   <img src="../Tugas-Ketujuh/img/4.6.png" width="100%" height="auto">
+   <img src="images/Screenshot (323).png" width="100%" height="auto"><br> 
+   <img src="images/Screenshot (325).png" width="100%" height="auto">
 
 4. **Hapus container untuk aplikasi todo. Gunakan docker ps untuk mendapatkan ID dan kemudian `docker rm -f <container-id>` untuk menghapusnya. Lalu mulai container baru menggunakan perintah yang sama seperti sebelumnya.**
    
-   <img src="../Tugas-Ketujuh/img/4.7.png" width="100%" height="auto">
+   <img src="images/Screenshot (324).png" width="100%" height="auto">
 
 5. **Buka aplikasi. Anda harus melihat item Anda masih ada dalam daftar! Silakan hapus container ketika Anda selesai memeriksa daftar Anda.**
    
@@ -304,7 +275,7 @@ Banyak orang sering bertanya "Di mana Docker sebenarnya menyimpan data saya keti
 ```
 docker volume inspect todo-db
 ```
-<img src="../Tugas-Ketujuh/img/4.8.png" width="100%" height="auto">
+<img src="images/Screenshot (327).png" width="100%" height="auto">
 
 `Mountpoint` adalah lokasi sebenarnya di disk tempat data disimpan. Perhatikan bahwa di sebagian besar mesin, Anda perlu memiliki akses root untuk mengakses direktori ini dari host. Tetapi, itulah lokasinya!
 
@@ -323,7 +294,7 @@ Untuk menjalankan container kita agar mendukung alur kerja pengembangan, kita ak
 Jadi, mari kita lakukan!
 1. **Pastikan Anda tidak memiliki container `docker-101` yang sedang berjalan.**
    
-   <img src="../Tugas-Ketujuh/img/5.1.png" width="100%" height="auto">
+   <img src="images/5.1.png" width="100%" height="auto">
 
 2. **Jalankan perintah berikut. Kami akan menjelaskan apa yang terjadi setelahnya:**
    ```
@@ -332,14 +303,14 @@ Jadi, mari kita lakukan!
     node:10-alpine \
     sh -c "yarn install && yarn run dev"
    ```
-   <img src="../Tugas-Ketujuh/img/5.2.png" width="100%" height="auto"><br>
+   <img src="images/5.2.png" width="100%" height="auto"><br>
    - `-dp 3000:3000` : Menjalankan dalam mode detached (latar belakang) dan membuat pemetaan port
    - `-w /app` : mengatur "direktori kerja" atau direktori saat ini di mana perintah akan dijalankan
    - `node:10-alpine` : image yang digunakan. Perhatikan bahwa ini adalah base image untuk aplikasi kita dari Dockerfile
    - `sh -c "yarn install && yarn run dev"` : perintahnya. Kita memulai shell menggunakan sh (alpine tidak memiliki bash) dan menjalankan yarn install untuk menginstal semua dependensi dan kemudian menjalankan yarn run dev. Jika kita melihat dalam package.json, kita akan melihat bahwa script dev memulai nodemon.
 3. **Anda dapat melihat log menggunakan `docker logs -f <container-id>`.**
    
-   <img src="../Tugas-Ketujuh/img/5.3.png" width="100%" height="auto">
+   <img src="images/5.3.png" width="100%" height="auto">
 
    Saat Anda selesai menonton log, keluar dengan menekan Ctrl+C.
 
@@ -347,7 +318,7 @@ Jadi, mari kita lakukan!
    Cukup muat ulang halaman (atau buka) dan Anda harus melihat perubahan tercermin di browser hampir secara instan. Mungkin butuh beberapa detik bagi server Node untuk memulai ulang, jadi jika Anda mendapatkan kesalahan, coba muat ulang setelah beberapa detik.
 5. **Silakan buat perubahan lain yang ingin Anda buat. Saat Anda selesai, hentikan container dan bangun image baru Anda menggunakan docker `build -t docker-101 .`**
    
-   <img src="../Tugas-Ketujuh/img/5.4.png" width="100%" height="auto">
+   <img src="images/5.4.png" width="100%" height="auto">
 
 6. **Menggunakan `bind mounts` sangat umum untuk pengaturan pengembangan lokal.** <br>
    Keuntungannya adalah bahwa mesin pengembangan tidak perlu memiliki semua alat build dan lingkungan yang diinstal. Dengan satu perintah docker run, lingkungan dev ditarik dan siap digunakan. Kita akan membahas Docker Compose di langkah berikutnya, karena ini akan membantu menyederhanakan perintah kita (kita sudah mulai mendapatkan banyak flag).
@@ -364,9 +335,7 @@ Sampai titik ini, kita telah bekerja dengan aplikasi container tunggal. Namun, s
 - Container terpisah memungkinkan Anda untuk versi dan memperbarui versi secara terpisah.
 - Meskipun Anda mungkin menggunakan container untuk database secara lokal, Anda mungkin ingin menggunakan layanan yang dikelola untuk database di produksi. Anda tidak ingin mengirim mesin database Anda dengan aplikasi Anda.
 - Menjalankan beberapa proses memerlukan manajer proses (container hanya memulai satu proses), yang menambah kompleksitas untuk startup/shutdown container.
-- Dan masih banyak alasan lainnya. Jadi, kita akan memperbarui aplikasi kita agar berfungsi seperti ini:
-
-<p align="center"><img src="../Tugas-Ketujuh/img/multi-app-architecture.png" width="70%" height="auto"></p>
+- Dan masih banyak alasan lainnya.
 
 ### Jaringan Container
 Ingat bahwa container, secara default, berjalan dalam isolasi dan tidak tahu apa-apa tentang proses atau container lain di mesin yang sama. Jadi, bagaimana kita memungkinkan satu container untuk berbicara dengan yang lain? Jawabannya adalah jaringan. Cukup ingat aturan ini...
@@ -379,7 +348,7 @@ Ada dua cara untuk menempatkan container di jaringan: `1) Menetapkannya saat mem
    ```
    docker network create todo-app
    ```
-   <img src="../Tugas-Ketujuh/img/6.1.png" width="100%" height="auto">
+   <img src="images/6.1.png" width="100%" height="auto">
 2. Mulai container MySQL dan pasang ke jaringan. Kami juga akan mendefinisikan beberapa variabel lingkungan yang akan digunakan database untuk menginisialisasi database (lihat bagian "Environment Variables" dalam listing MySQL Docker Hub).
    ```
    docker run -d \
@@ -389,7 +358,7 @@ Ada dua cara untuk menempatkan container di jaringan: `1) Menetapkannya saat mem
       -e MYSQL_DATABASE=todos \
       mysql:5.7
    ```
-   <img src="../Tugas-Ketujuh/img/6.2.png" width="100%" height="auto">
+   <img src="images/6.2.png" width="100%" height="auto">
 
    Anda juga akan melihat kami menentukan flag `--network-alias`. Kami akan kembali ke ini sebentar lagi.
 
@@ -401,7 +370,7 @@ Ada dua cara untuk menempatkan container di jaringan: `1) Menetapkannya saat mem
    ```
    docker exec -it <mysql-container-id> mysql -p
    ```
-   <img src="../Tugas-Ketujuh/img/6.3.png" width="100%" height="auto">
+   <img src="images/6.3.png" width="100%" height="auto">
 
    Saat prompt password muncul, ketik `secret`. Di shell MySQL, daftar database dan verifikasi bahwa Anda melihat database `todos`.
    ```
@@ -409,7 +378,7 @@ Ada dua cara untuk menempatkan container di jaringan: `1) Menetapkannya saat mem
    ```
    Anda harus melihat output yang terlihat seperti ini:
 
-   <img src="../Tugas-Ketujuh/img/6.4.png" width="50%" height="auto">
+   <img src="images/6.4.png" width="50%" height="auto">
 
    Hore! Kami memiliki database `todos` dan siap digunakan!
 
@@ -422,15 +391,10 @@ Untuk mengetahuinya, kita akan menggunakan container `nicolaka/netshoot`, yang d
    ```
    docker run -it --network todo-app nicolaka/netshoot
    ```
-   <img src="../Tugas-Ketujuh/img/6.5.1.png" width="100%" height="auto">
-   <img src="../Tugas-Ketujuh/img/6.5.2.png" width="100%" height="auto">
 2. Di dalam container, kita akan menggunakan perintah `dig`, yang merupakan alat DNS yang berguna. Kita akan mencari alamat IP untuk hostname `mysql`.
    ```
    dig mysql
    ```
-   Dan Anda akan mendapatkan output seperti ini:
-
-   <img src="../Tugas-Ketujuh/img/6.6.png" width="100%" height="auto">
 
    Di "ANSWER SECTION", Anda akan melihat record A untuk `mysql` yang mengarah ke 172.23.0.2 (alamat IP Anda kemungkinan akan memiliki nilai berbeda). Meskipun `mysql` bukan hostname yang valid, Docker dapat menerjemahkannya ke alamat IP dari container yang memiliki alias jaringan tersebut (ingat flag `--network-alias` yang kita gunakan sebelumnya?).
 
@@ -458,13 +422,13 @@ Lets start!
       node:10-alpine \
       sh -c "yarn install && yarn run dev"
    ```
-   <img src="../Tugas-Ketujuh/img/6.7.png" width="100%" height="auto">
+   <img src="iamges/6.7.png" width="100%" height="auto">
 2. Jika kita melihat log untuk container tersebut (`docker logs <container-id>`), kita harus melihat pesan yang menunjukkan bahwa itu menggunakan database mysql.
    ```
    # Previous log messages omitted
    $ nodemon src/index.js
    ```
-   <img src="../Tugas-Ketujuh/img/6.8.png" width="100%" height="auto">
+   <img src="images/6.8.png" width="100%" height="auto">
 3. Buka aplikasi di browser Anda dan tambahkan beberapa item ke daftar tugas Anda.
 4. Sambungkan ke database mysql dan buktikan bahwa item tersebut ditulis ke database. Ingat, password-nya adalah `secret`.
    ```
@@ -475,7 +439,7 @@ Lets start!
    ```bash 
    mysql> select * from todo_items;
    ```
-   <img src="../Tugas-Ketujuh/img/6.10.png" width="100%" height="auto">
+   <img src="images/6.10.png" width="100%" height="auto">
    
    Jelas, tabel Anda akan terlihat berbeda karena berisi item Anda. Tapi, Anda harus melihat mereka tersimpan di sana!
 
@@ -498,7 +462,7 @@ Setelah instalasi, jalankan perintah berikut untuk melihat informasi versi:
 ```
 docker-compose version
 ```
-<p align="center"><img src="../Tugas-Ketujuh/img/7.1.png" width="100%" height="auto"></p>
+<p align="center"><img src=".images/7.1.png" width="100%" height="auto"></p>
 
 ### Membuat File Compose
 
@@ -632,9 +596,9 @@ docker-compose version
 
 4. **File `docker-compose.yml` lengkap.**
    
-   <img src="../Tugas-Ketujuh/img/7.2.0.png" width="100%" height="auto">
-   <img src="../Tugas-Ketujuh/img/7.2.1.png" width="100%" height="auto">
-   <img src="../Tugas-Ketujuh/img/7.2.2.png" width="100%" height="auto">
+   <img src="images/7.2.0.png" width="100%" height="auto">
+   <img src="images/7.2.1.png" width="100%" height="auto">
+   <img src="images/7.2.2.png" width="100%" height="auto">
 
 ### Menjalankan Stack Aplikasi
 
@@ -643,19 +607,19 @@ docker-compose version
    docker ps
    docker rm -f <ids>
    ```
-   <img src="../Tugas-Ketujuh/img/7.3.png" width="100%" height="auto">
+   <img src="images/7.3.png" width="100%" height="auto">
 
 2. **Mulai stack aplikasi dengan perintah:**
    ```bash
    docker-compose up -d
    ```
-   <img src="../Tugas-Ketujuh/img/7.4.png" width="100%" height="auto">
+   <img src="images/7.4.png" width="100%" height="auto">
 
 3. **Lihat log menggunakan:**
    ```bash
    docker-compose logs -f
    ```
-   <img src="../Tugas-Ketujuh/img/7.5.png" width="100%" height="auto">
+   <img src="images/7.5.png" width="100%" height="auto">
 
 ### Menutup Stack Aplikasi
 
@@ -674,7 +638,7 @@ Dengan Docker Compose, mendefinisikan dan membagikan aplikasi multi-layanan menj
 Tahukah Anda bahwa Anda bisa melihat komponen-komponen yang membentuk sebuah image? Dengan menggunakan perintah `docker image history`, Anda bisa melihat perintah yang digunakan untuk membuat setiap layer dalam sebuah image.
 
 Sebelumnya pastikan `docker-101` sudah di build
-<img src="../Tugas-Ketujuh/img/8.1.0.png" width="100%" height="auto">
+<img src="images/8.1.0.png" width="100%" height="auto">
 
 1. **Gunakan perintah `docker image history` untuk melihat layer-layer dalam image `docker-101` yang Anda buat sebelumnya dalam tutorial ini:**
    ```bash
@@ -682,7 +646,7 @@ Sebelumnya pastikan `docker-101` sudah di build
    ```
    Output yang dihasilkan mungkin akan terlihat seperti ini (tanggal/ID mungkin berbeda):
 
-   <img src="../Tugas-Ketujuh/img/8.1.1.png" width="100%" height="auto">
+   <img src="images/8.1.1.png" width="100%" height="auto">
 
    Setiap baris mewakili satu layer dalam image. Baris paling bawah adalah layer dasar, dan yang paling atas adalah layer terbaru. Anda juga bisa melihat ukuran setiap layer, yang membantu mendiagnosis image yang besar.
 
@@ -690,7 +654,7 @@ Sebelumnya pastikan `docker-101` sudah di build
    ```bash
    docker image history --no-trunc docker-101
    ```
-   <img src="../Tugas-Ketujuh/img/8.2.png" width="100%" height="auto">
+   <img src="images/8.2.png" width="100%" height="auto">
 
 #### Layer Caching
 Sekarang setelah Anda melihat layering dalam aksi, ada pelajaran penting untuk meningkatkan waktu build image container Anda.
@@ -699,13 +663,13 @@ Sekarang setelah Anda melihat layering dalam aksi, ada pelajaran penting untuk m
 
 1. **Mari kita lihat Dockerfile yang kita gunakan:**
 
-   <img src="../Tugas-Ketujuh/img/8.3.0.png" width="100%" height="auto">
-   <img src="../Tugas-Ketujuh/img/8.3.1.png" width="100%" height="auto">
+   <img src="images/8.3.0.png" width="100%" height="auto">
+   <img src="images/8.3.1.png" width="100%" height="auto">
    Setiap perintah dalam Dockerfile menjadi layer baru dalam image. Jika ada perubahan pada image, dependencies `yarn` harus diinstal ulang. Bagaimana cara memperbaikinya? Dengan menstruktur ulang Dockerfile untuk mendukung caching dependencies. Untuk aplikasi berbasis Node, dependencies didefinisikan dalam file `package.json`. Jadi, kita bisa menyalin file tersebut terlebih dahulu, menginstal dependencies, lalu menyalin semuanya. Dependencies hanya akan diulang jika ada perubahan pada `package.json`.
 
 2. **Update Dockerfile jadi seperti ini:**
    
-   <img src="../Tugas-Ketujuh/img/8.4.png" width="100%" height="auto">
+   <img src="images/8.4.png" width="100%" height="auto">
 
 3. **Build image baru:**
    ```bash
@@ -713,11 +677,11 @@ Sekarang setelah Anda melihat layering dalam aksi, ada pelajaran penting untuk m
    ```
    Output:
 
-   <img src="../Tugas-Ketujuh/img/8.5.png" width="100%" height="auto">
+   <img src="images/8.5.png" width="100%" height="auto">
    
 4. **Setiap layer dibangun ulang. Sekarang, buat perubahan pada file `src/static/index.html` (misalnya, ubah `<title>`).**
    
-   <img src="../Tugas-Ketujuh/img/8.6.png" width="100%" height="auto">
+   <img src="images/8.6.png" width="100%" height="auto">
 
 5. **Build image Docker lagi:**
    ```bash
@@ -725,7 +689,7 @@ Sekarang setelah Anda melihat layering dalam aksi, ada pelajaran penting untuk m
    ```
    Output:
 
-   <img src="../Tugas-Ketujuh/img/8.7.png" width="100%" height="auto">
+   <img src="images/8.7.png" width="100%" height="auto">
 
    Proses build menjadi lebih cepat dan menggunakan cache.
 
