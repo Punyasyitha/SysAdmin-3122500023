@@ -8,11 +8,11 @@ Mobile Apps e-Klinik PENS</h1>
 
 <div align="center">
   <h3>KEMLOMPOK 4:</h3>
-  <p align="center">Mirta Chadhirotin Nachlah 3122500009</p>
-  <p align="center">Mohammad Ilham Ramadani 3122500020</p>
-  <p align="center">Masyitha Fahra Nabila 3122500023</p>
-  <p align="center">Rifqi Rayita Dhiyaulhaq 3122500027</p>
-  <p align="center">Muhammad Syahrul Ramadhan 3122500030</p>
+  <p align="center">Mirta Chadhirotin Nachlah (3122500009)</p>
+  <p align="center">Mohammad Ilham Ramadani (3122500020)</p>
+  <p align="center">Masyitha Fahra Nabila (3122500023)</p>
+  <p align="center">Rifqi Rayita Dhiyaulhaq (3122500027)</p>
+  <p align="center">Muhammad Syahrul Ramadhan (3122500030)</p>
 </div>
 
 <div align="center">
