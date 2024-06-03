@@ -44,7 +44,7 @@ Tujuan utama dari proyek ini adalah untuk meningkatkan efisiensi operasional kli
 - [Ruang Lingkup](#ruang-lingkup)
 - [Desain Sistem](#desain-sistem)
 - [Tim dan Tugas](#tim-dan-tugas)
-- [Tahapan Pelaksaan](#tahapan-pelaksaan)
+- [Tahapan Pelaksanaan](#tahapan-pelaksanaan)
 - [Sistem testing](#sistem-testing)
 - [Kesimpulan](#kesimpulan)
 
@@ -54,7 +54,7 @@ Tujuan utama dari proyek ini adalah untuk meningkatkan efisiensi operasional kli
 
 Docker adalah platform open-source yang dirancang untuk mengotomatisasi penyebaran aplikasi sebagai paket yang dapat dieksekusi, yang dikenal sebagai kontainer, dalam lingkungan yang terisolasi dan konsisten. Kontainer ini berisi semua yang dibutuhkan aplikasi untuk berjalan, termasuk kode, runtime, pustaka, dan pengaturan sistem, sehingga aplikasi dapat dijalankan dengan andal di berbagai lingkungan, dari pengembangan hingga produksi. Dengan Docker, pengembang dapat membuat, menguji, dan menyebarkan aplikasi dengan cepat dan efisien, mengurangi masalah kompatibilitas dan meningkatkan skalabilitas serta portabilitas aplikasi. Docker juga mendukung orkestrasi kontainer, memungkinkan pengelolaan dan penskalaan aplikasi di berbagai host dengan mudah.
 
-Pada aplikasi E-Klinik PENS, kami menggunakan Storage Server untuk menyimpan dan mengambil data, seperti file atau dokumen besar. Backend framework Laravel mengelola request pengguna serta berinteraksi dengan Storage Server dan MySQL Database untuk data yang relasional. MySQL digunakan untuk menyimpan data aplikasi yang lebih fleksibel dan tidak relasional. Docker Engine dipakai untuk mengembangkan, mengirimkan, dan menjalankan aplikasi dalam kontainer, serta menghubungkan antarmuka pengguna pada perangkat mobile dengan backend Laravel, Storage Server, dan berbagai layanan database.
+Pada aplikasi E-Klinik PENS, kami menggunakan Storage Server untuk menyimpan dan mengambil data, seperti file atau dokumen besar. Backend framework Laravel mengelola request pengguna serta berinteraksi dengan Storage Server dan MySQL Database untuk data yang relasional. MongoDB Database digunakan untuk menyimpan data aplikasi yang lebih fleksibel dan tidak relasional. Docker Engine dipakai untuk mengembangkan, mengirimkan, dan menjalankan aplikasi dalam kontainer, serta menghubungkan antarmuka pengguna pada perangkat mobile dengan backend Laravel, Storage Server, dan berbagai layanan database.
 
 ## Ruang Lingkup
 
@@ -158,6 +158,8 @@ Deskripsi desain sistem dari aplikasi E-Klinik PENS sesuai dengan diagram yang d
     
 ## Tahapan Pelaksanaan
 
+<p align="center"><img src="images/timeline.jpg" alt="timeline_kerja"></p>
+
 1. Pengerjaan UI/UX dan Database<br> 
     Pelaksanaan UI/UX yang diikuti dengan penyusunan database dilakukan dalam kurun waktu 1 minggu (25 April -  2 Mei 2024)<br>
     - Melakukan riset pengguna untuk memahami kebutuhan dan masalah pengguna (User, Admin, Dokter)
@@ -204,70 +206,6 @@ Deskripsi desain sistem dari aplikasi E-Klinik PENS sesuai dengan diagram yang d
 ## Sistem Testing
 
 Dalam pengembangan aplikasi E-Klinik PENS, dua jenis pengujian penting yang perlu dilakukan adalah pengujian fungsional (functional testing) dan pengujian instalasi (installation testing). Berikut adalah rincian dari kedua jenis pengujian tersebut:
-
-### VERSI MOBILE
-<hr>
-
-### A. Fungsional Testing 
-Fungsional testing bertujuan untuk memastikan bahwa setiap fitur dan fungsi aplikasi bekerja sesuai dengan spesifikasi yang telah ditentukan. Berikut adalah beberapa aspek yang diuji:
-
-#### 1. Autentikasi Pengguna:
-- Verifikasi login dan logout untuk setiap peran (User, Admin, Dokter).
-- Pengujian registrasi pengguna baru.
-- Pengujian reset dan perubahan kata sandi.
-
-#### 2. Pengelolaan Rekam Medis:
-- Pengujian fungsi melihat riwayat rekam medis oleh pengguna.
-- Pengujian fitur pengisian rekam medis oleh dokter.
-- Verifikasi pengelolaan data rekam medis oleh admin.
-
-#### 3. Jadwal Dokter:
-- Pengujian tampilan jadwal dokter untuk pengguna.
-Pengujian pembaruan jadwal oleh admin atau dokter.
-
-#### 4. Interaksi dengan Database:
-- Verifikasi penyimpanan dan pengambilan data rekam medis di MySQL.
-- Pengujian query untuk memastikan integritas dan konsistensi data.
-
-#### 5. Pengelolaan Kritik & Saran:
-- Pengujian fitur pengisian kritik dan saran oleh pengguna.
-- Pengujian tampilan dan pengelolaan kritik & saran oleh admin.
-
-#### 6. Responsivitas dan Kecepatan Aplikasi:
-- Pengujian performa aplikasi pada berbagai perangkat mobile.
-- Pengujian kecepatan respons aplikasi terhadap berbagai permintaan pengguna.
-
-#### 7. API Integration:
-- Verifikasi integrasi API antara frontend mobile dan backend Laravel.
-- Pengujian pengiriman dan penerimaan data melalui API.
-
-### B. Installation Testing 
-Instalation testing bertujuan untuk memastikan bahwa aplikasi dapat diinstalasi dan dijalankan dengan benar pada perangkat target. Berikut adalah beberapa aspek yang diuji:
-
-#### 1. Instalasi Aplikasi:
-- Pengujian proses instalasi aplikasi di berbagai perangkat Android dan iOS.
-- Verifikasi bahwa aplikasi terinstal dengan benar tanpa error.
-
-#### 2. Uninstall Aplikasi:
-- Pengujian proses uninstall untuk memastikan aplikasi dapat dihapus dengan benar tanpa meninggalkan residu.
-
-#### 3. Compatibility Testing:
-- Pengujian aplikasi pada berbagai versi OS (Android/iOS) untuk memastikan kompatibilitas.
-- Pengujian aplikasi pada perangkat dengan spesifikasi yang berbeda (low-end dan high-end devices).
-
-#### 4. Initial Launch:
-- Verifikasi bahwa aplikasi dapat diluncurkan tanpa masalah setelah instalasi.
-- Pengujian splash screen dan proses inisialisasi pertama kali aplikasi dijalankan.
-
-#### 5. Dependency Check:
-- Verifikasi bahwa semua dependensi aplikasi (library, plugins, dll.) terinstal dengan benar.
-- Pengujian bahwa aplikasi tidak mengalami crash atau malfungsi karena dependensi yang hilang atau rusak.
-
-#### 6. Update Testing:
-- Pengujian proses update aplikasi dari versi lama ke versi baru.
-- Verifikasi bahwa data pengguna dan pengaturan tetap utuh setelah update.
-
-Dengan melakukan fungsional testing dan instalation testing secara menyeluruh, tim pengembang dapat memastikan bahwa aplikasi E-Klinik PENS berfungsi sesuai dengan harapan dan memberikan pengalaman pengguna yang optimal tanpa masalah teknis.
 
 ### VERSI DOCKER
 <hr>
