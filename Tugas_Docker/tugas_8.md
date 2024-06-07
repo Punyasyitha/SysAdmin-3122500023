@@ -7,12 +7,12 @@ Mobile Apps e-Klinik PENS</h1>
 <p align="center"><img src="images/logo.png" alt="logo"></p>
 
 <div align="center">
-  <h3>KELOMPOK 4:</h3>
-  <p align="center">Mirta Chadhirotin Nachlah (3122500009)</p>
-  <p align="center">Mohammad Ilham Ramadani (3122500020)</p>
-  <p align="center">Masyitha Fahra Nabila (3122500023)</p>
-  <p align="center">Rifqi Rayita Dhiyaulhaq (3122500027)</p>
-  <p align="center">Muhammad Syahrul Ramadhan (3122500030)</p>
+  <h3>KEMLOMPOK 4:</h3>
+  <p align="center">Mirta Chadhirotin Nachlah 3122500009</p>
+  <p align="center">Mohammad Ilham Ramadani 3122500020</p>
+  <p align="center">Masyitha Fahra Nabila 3122500023</p>
+  <p align="center">Rifqi Rayita Dhiyaulhaq 3122500027</p>
+  <p align="center">Muhammad Syahrul Ramadhan 3122500030</p>
 </div>
 
 <div align="center">
@@ -236,6 +236,15 @@ Dalam konteks menggunakan Docker untuk pengembangan dan pengujian aplikasi E-Kli
 - Menjalankan docker-compose up untuk mengatur lingkungan pengujian yang mencakup semua layanan.
 - Menjalankan skrip pengujian otomatis dalam container yang memverifikasi berbagai fitur aplikasi seperti login, pengelolaan rekam medis, dan penjadwalan dokter.
 
+- Authentication
+<p align="center"><img src="images/auth (1).png" alt="authentication"></p> <br>
+<p align="center"><img src="images/auth (2).png" alt="authentication"></p>
+
+- Clinic History
+<p align="center"><img src="images/clinic_history (1).png" alt="clinic history"></p> <br
+>
+<p align="center"><img src="images/clinic_history (2).png" alt="clinic history"></p>
+
 ### Installation Testing
 
 *Tujuan*: Memastikan bahwa aplikasi dapat diinstal dan dijalankan dengan benar di berbagai perangkat dan lingkungan.
@@ -262,7 +271,23 @@ Dalam konteks menggunakan Docker untuk pengembangan dan pengujian aplikasi E-Kli
 - Memverifikasi bahwa setiap container (MySQL, backend Laravel, frontend mobile) berjalan dengan benar dan saling berkomunikasi.
 - Menguji update Docker image dan melakukan rollback jika diperlukan.
 
-Dengan menggunakan Docker untuk fungsional dan installation testing, tim pengembang dapat memastikan bahwa aplikasi E-Klinik PENS tidak hanya berfungsi dengan baik, tetapi juga mudah diinstal, dikonfigurasi, dan diperbarui dalam lingkungan yang terkontainerisasi.
+
+- Docker Build
+<p align="center"><img src="images/docker_build.png" alt="installation testing"></p>
+
+- Docker Up
+<p align="center"><img src="images/docker_up.png" alt="installation testing"></p>
+
+- Docker Status
+<p align="center"><img src="images/docker_status.png" alt="installation testing"></p>
+
+- Docker Restart
+<p align="center"><img src="images/docker_restart.png" alt="installation testing"></p>
+
+- Result
+<p align="center"><img src="images/result.png" alt="installation testing"></p>
+
+- Dengan menggunakan Docker untuk fungsional dan installation testing, tim pengembang dapat memastikan bahwa aplikasi E-Klinik PENS tidak hanya berfungsi dengan baik, tetapi juga mudah diinstal, dikonfigurasi, dan diperbarui dalam lingkungan yang terkontainerisasi.
 
 ## Kesimpulan
 
