@@ -7,7 +7,7 @@ Mobile Apps e-Klinik PENS</h1>
 <p align="center"><img src="images/logo.png" alt="logo"></p>
 
 <div align="center">
-  <h3>KEMLOMPOK 4:</h3>
+  <h3>KELOMPOK 4:</h3>
   <p align="center">Mirta Chadhirotin Nachlah 3122500009</p>
   <p align="center">Mohammad Ilham Ramadani 3122500020</p>
   <p align="center">Masyitha Fahra Nabila 3122500023</p>
